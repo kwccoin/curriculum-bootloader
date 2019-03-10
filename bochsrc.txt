@@ -1,0 +1,25 @@
+# seems can use brew install
+
+# brew install/upgrade qemu
+#    under qeume
+#    need commnad-ctrl-alt-g
+
+# brew install/upgrade nasm
+#     need to handle PDF as not generating anything workable
+
+# brew install/upgrade bochs
+#   see bochs configuration as well e.g. http://bochs.sourceforge.net/doc/docbook/user/bochsrc.html
+#   do as needed 
+#     e.g.  brew install/upgrade sdl2
+#           need to change the location of the romimage and vgaromimage (see below)
+#           may need to fine tune (so far launch but no pic)
+
+megs: 32
+romimage: file=/usr/local/Cellar/bochs/2.6.9_2/share/bochs/BIOS-bochs-latest, address=0xfffe0000
+vgaromimage: file=/usr/local/Cellar/bochs/2.6.9_2/share/bochs/VGABIOS-lgpl-latest
+floppya: 1_44=cv.pdf, status=inserted
+boot: a
+log: bochsout.txt
+mouse: enabled=0
+display_library: sdl2, options="fullscreen"
+
